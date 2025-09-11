@@ -3,15 +3,17 @@ import { createPinia } from 'pinia'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faStar as faStarSolid,
-  faThumbsUp as faThumbsUpSolid,
+  faBeerMugEmpty,
+  faBell as faBellSolid,
   faSearch,
+  faSquareCheck,
+  faThumbsUp as faThumbsUpSolid,
 } from '@fortawesome/free-solid-svg-icons'
 import {
-  faStar as faStarRegular,
-  faThumbsUp as faThumbsUpRegular,
+  faBell as faBellRegular,
+  faCircleQuestion,
   faSquare,
-  faSquareCheck,
+  faThumbsUp as faThumbsUpRegular,
 } from '@fortawesome/free-regular-svg-icons'
 import { faUntappd } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -24,11 +26,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 library.add(
+  faBeerMugEmpty,
+  faBellRegular,
+  faBellSolid,
+  faCircleQuestion,
   faSearch,
   faSquare,
   faSquareCheck,
-  faStarRegular,
-  faStarSolid,
   faThumbsUpRegular,
   faThumbsUpSolid,
   faUntappd,
@@ -42,6 +46,6 @@ app.use(pinia)
 app.use(router)
 
 import { useThemeStore } from './stores/theme'
-const themeStore = useThemeStore()
+useThemeStore()
 
 app.mount('#app')

@@ -33,7 +33,7 @@ onMounted(async () => {
 </script>
 <template>
   <div class="beers">
-    <div class="sticky-top bg-body-tertiary">
+    <div class="sticky-top bg-body-tertiary shadow">
       <div class="container">
         <div class="py-2">
           <div class="input-group">

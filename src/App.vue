@@ -7,20 +7,58 @@
     <main class="flex-grow-1">
       <RouterView />
     </main>
-    <nav class="sticky-bottom bg-body-tertiary bottom-0">
+    <nav class="sticky-bottom bg-body-tertiary bottom-0 shadow">
       <div class="container">
         <ul class="nav nav-fill nav-underline">
           <li class="nav-item">
-            <RouterLink :to="{name: 'home'}" class="nav-link flex-grow-1"> Home </RouterLink>
+            <RouterLink
+              :to="{ name: 'home' }"
+              class="nav-link flex-grow-1 d-flex flex-column align-items-center"
+              activeClass="active"
+            >
+              <font-awesome-icon :icon="['fas', 'beer-mug-empty']" />
+              <div class="small">Home</div>
+            </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink :to="{name: 'favorites'}" class="nav-link flex-grow-1"> Favorites </RouterLink>
+            <RouterLink
+              :to="{ name: 'todos' }"
+              class="nav-link flex-grow-1 d-flex flex-column align-items-center"
+              activeClass="active"
+            >
+              <font-awesome-icon :icon="['fas', 'bell']" />
+              <div class="small">Todo</div>
+            </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink :to="{name: 'home'}" class="nav-link flex-grow-1"> Home </RouterLink>
+            <RouterLink
+              :to="{ name: 'drank' }"
+              class="nav-link flex-grow-1 d-flex flex-column align-items-center"
+              activeClass="active"
+            >
+              <font-awesome-icon :icon="['fas', 'square-check']" />
+              <div class="small">Drank</div>
+            </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink :to="{name: 'home'}" class="nav-link flex-grow-1"> Home </RouterLink>
+            <RouterLink
+              :to="{ name: 'favorites' }"
+              class="nav-link flex-grow-1 d-flex flex-column align-items-center"
+              activeClass="active"
+            >
+              <font-awesome-icon :icon="['fas', 'thumbs-up']" />
+              <div class="small">Favorites</div>
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink
+              :to="{ name: 'about' }"
+              class="nav-link flex-grow-1 d-flex flex-column align-items-center"
+              activeClass="active"
+            >
+              <font-awesome-icon :icon="['far', 'circle-question']" />
+              <div class="small">About</div>
+            </RouterLink>
           </li>
         </ul>
       </div>

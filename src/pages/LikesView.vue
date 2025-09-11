@@ -1,3 +1,0 @@
-<template>
-  LikesView.vue
-</template>

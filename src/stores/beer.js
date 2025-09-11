@@ -82,6 +82,6 @@ export const useBeerStore = defineStore('beer', () => {
     toggleDrank,
     isLiked,
     isTodo,
-    isDrank
+    isDrank,
   }
 })

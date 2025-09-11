@@ -24,30 +24,35 @@
                     class="btn btn-sm"
                     :class="beerStore.isTodo(beer.slug) ? 'btn-success' : 'btn-outline-success'"
                     @click="beerStore.toggleTodo(beer.slug)"
+                    title="Todo"
                   >
                     <font-awesome-icon
-                      :icon="['far', 'square']"
+                      :icon="['far', 'bell']"
                       v-if="!beerStore.isTodo(beer.slug)"
                     />
-                    <font-awesome-icon :icon="['far', 'square-check']" v-else />
+                    <font-awesome-icon :icon="['fas', 'bell']" v-else />
                   </button>
 
                   <button
                     class="btn btn-sm"
                     :class="beerStore.isDrank(beer.slug) ? 'btn-info' : 'btn-outline-info'"
                     @click="beerStore.toggleDrank(beer.slug)"
+                    title="Drank"
                   >
                     <font-awesome-icon
-                      :icon="['far', 'star']"
+                      :icon="['far', 'square']"
                       v-if="!beerStore.isDrank(beer.slug)"
                     />
-                    <font-awesome-icon :icon="['fas', 'star']" v-else />
+                    <font-awesome-icon :icon="['fas', 'square-check']" v-else />
                   </button>
 
                   <button
                     class="btn btn-sm"
-                    :class="beerStore.isLiked(beer.slug) ? 'btn-secondary' : 'btn-outline-secondary'"
+                    :class="
+                      beerStore.isLiked(beer.slug) ? 'btn-secondary' : 'btn-outline-secondary'
+                    "
                     @click="beerStore.toggleLike(beer.slug)"
+                    title="Liked!"
                   >
                     <font-awesome-icon
                       :icon="['far', 'thumbs-up']"
@@ -55,7 +60,6 @@
                     />
                     <font-awesome-icon :icon="['fas', 'thumbs-up']" v-else />
                   </button>
-
 
                   <a
                     :href="beer.uri"
