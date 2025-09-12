@@ -1,1 +1,0 @@
-import{u as s,_ as a}from"./BeerList.vue_vue_type_script_setup_true_lang-B-2S5a1-.js";import{c as n,o,g as c,b as u}from"./index-BZwzrYny.js";const m={__name:"DrankView",setup(f){const e=s(),t=n(()=>e.beers.filter(r=>!!e.isDrank(r.slug)));return o(async()=>{await e.fetchBeers()}),(r,i)=>(u(),c(a,{"filtered-beers":t.value},null,8,["filtered-beers"]))}};export{m as default};
