@@ -51,6 +51,20 @@ export const useBeerStore = defineStore('beer', () => {
     return drank.value.includes(beerSlug)
   }
 
+  function breweries() {
+    return [
+      ...new Set(
+        beers.value
+          .map((beer) => ({
+            name: beer.brewery,
+            slug: beer.brewery_slug,
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(JSON.stringify),
+      ),
+    ].map(JSON.parse)
+  }
+
   async function fetchBeers() {
     isLoading.value = true
     error.value = null
@@ -83,5 +97,6 @@ export const useBeerStore = defineStore('beer', () => {
     isLiked,
     isTodo,
     isDrank,
+    breweries,
   }
 })
