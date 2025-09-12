@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { createHead } from '@unhead/vue/client'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -44,6 +45,9 @@ const pinia = createPinia()
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(pinia)
 app.use(router)
+
+const head = createHead()
+app.use(head)
 
 import { useThemeStore } from './stores/theme'
 useThemeStore()

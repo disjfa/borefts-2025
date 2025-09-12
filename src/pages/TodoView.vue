@@ -2,6 +2,11 @@
 import { computed, onMounted } from 'vue'
 import { useBeerStore } from '@/stores/beer'
 import BeerList from '@/components/BeerList.vue'
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Todo',
+})
 
 const beerStore = useBeerStore()
 

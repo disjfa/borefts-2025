@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Home',
+  titleTemplate: '%s | Borefts 2025',
+  htmlAttrs: { lang: 'en' },
+  link: [
+    {
+      rel: 'manifest',
+      href: '/borefts-2025/manifest.json',
+    },
+  ],
+})
+</script>
 <template>
   <div class="min-vh-100 d-flex flex-column">
     <div class="container">
