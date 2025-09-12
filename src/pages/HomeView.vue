@@ -5,7 +5,7 @@ import BeerList from '@/components/BeerList.vue'
 
 const beerStore = useBeerStore()
 const searchQuery = ref('')
-const sort = ref('default')
+const sort = ref('')
 const brewery = ref('')
 
 const filteredBeers = computed(() => {
@@ -77,7 +77,7 @@ onMounted(async () => {
               </option>
             </select>
             <select v-model="sort" class="form-select">
-              <option selected value="default">- filter -</option>
+              <option selected value="">- filter -</option>
               <option value="a-z">a-z</option>
               <option value="z-a">z-a</option>
               <option value="rating">rating</option>
@@ -87,6 +87,22 @@ onMounted(async () => {
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="container d-flex gap-2 pt-3">
+      <span class="badge rounded-pill border">
+        {{ filteredBeers.length }}
+        beers
+      </span>
+      <a href="#" @click="searchQuery = ''" class="badge rounded-pill text-bg-light">
+        {{ searchQuery }}
+      </a>
+      <a href="#" @click="brewery = ''" class="badge rounded-pill text-bg-light">
+        {{ brewery }}
+      </a>
+      <a href="#" @click="sort = ''" class="badge rounded-pill text-bg-light">
+        {{ sort }}
+      </a>
     </div>
 
     <BeerList :filtered-beers="filteredBeers" />
