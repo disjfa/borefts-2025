@@ -1,4 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { usePostHog } from '@/composables/usePostHog'
+
+const { posthog } = usePostHog()
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -30,5 +33,7 @@ const router = createRouter({
     },
   ],
 })
+
+
 
 export default router

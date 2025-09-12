@@ -1,5 +1,8 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { usePostHog } from '@/composables/usePostHog'
+
+const { posthog } = usePostHog()
 
 export const useBeerStore = defineStore('beer', () => {
   const beers = ref([])
@@ -12,8 +15,10 @@ export const useBeerStore = defineStore('beer', () => {
   function toggleLike(beerSlug) {
     const index = likes.value.indexOf(beerSlug)
     if (index === -1) {
+      posthog.capture('beer-like', { beer: beerSlug })
       likes.value.push(beerSlug)
     } else {
+      posthog.capture('beer-un-like', { beer: beerSlug })
       likes.value.splice(index, 1)
     }
     localStorage.setItem('beerLikes', JSON.stringify(likes.value))
@@ -22,8 +27,10 @@ export const useBeerStore = defineStore('beer', () => {
   function toggleTodo(beerSlug) {
     const index = todos.value.indexOf(beerSlug)
     if (index === -1) {
+      posthog.capture('beer-todo', { beer: beerSlug })
       todos.value.push(beerSlug)
     } else {
+      posthog.capture('beer-un-todo', { beer: beerSlug })
       todos.value.splice(index, 1)
     }
     localStorage.setItem('beerTodos', JSON.stringify(todos.value))
@@ -32,8 +39,10 @@ export const useBeerStore = defineStore('beer', () => {
   function toggleDrank(beerSlug) {
     const index = drank.value.indexOf(beerSlug)
     if (index === -1) {
+      posthog.capture('beer-drank', { beer: beerSlug })
       drank.value.push(beerSlug)
     } else {
+      posthog.capture('beer-un-drank', { beer: beerSlug })
       drank.value.splice(index, 1)
     }
     localStorage.setItem('beerDrank', JSON.stringify(todos.value))
