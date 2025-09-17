@@ -45,7 +45,7 @@ export const useBeerStore = defineStore('beer', () => {
       posthog.capture('beer-un-drank', { beer: beerSlug })
       drank.value.splice(index, 1)
     }
-    localStorage.setItem('beerDrank', JSON.stringify(todos.value))
+    localStorage.setItem('beerDrank', JSON.stringify(drank.value))
   }
 
   function isLiked(beerSlug) {
